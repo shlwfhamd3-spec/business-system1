@@ -1,10 +1,11 @@
 import streamlit as st
 import google.generativeai as genai
 
-# إعداد المحرك بالمفتاح مباشرة
+# إعداد المفتاح
 genai.configure(api_key="AIzaSyBXCxlQC4B5qRlLsNgwKmj1lfbjEDnA1-4")
-model = genai.GenerativeModel('gemini-1.0-pro')
 
+# استخدام النموذج المحدث والمتاح للجميع
+model = genai.GenerativeModel('gemini-1.5-flash')
 
 st.title("نظام الإدارة الذكي")
 
@@ -14,10 +15,12 @@ if st.button("تحليل وتوليد التوصيات"):
     if report:
         try:
             with st.spinner("جاري التحليل..."):
-                response = model.generate_content(f"حلل هذا التقرير: {report}")
+                # استخدام طريقة استدعاء أكثر عمومية
+                response = model.generate_content(report)
                 st.write(response.text)
         except Exception as e:
-            st.error(f"خطأ في الاتصال: {e}")
+            st.error(f"خطأ: {e}")
+            st.info("نصيحة: تأكد من أن مفتاح الـ API الخاص بك مفعل في Google AI Studio للنموذج gemini-1.5-flash")
     else:
-        st.warning("يرجى كتابة التقرير.")
-      
+        st.warning("يرجى كتابة التقرير أولاً.")
+        
