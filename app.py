@@ -2,10 +2,10 @@ import streamlit as st
 import google.generativeai as genai
 
 # إعداد المفتاح
-genai.configure(api_key="AIzaSyBXCxlQC4B5qRlLsNgwKmj1lfbjEDnA1-4")
+genai.configure(api_key="AIzaSyBKwclOz7pD_-VusmBm2V1JHmNSueTjbBU")
 
 # استخدام النموذج المحدث والمتاح للجميع
-model = genai.GenerativeModel('gemini-1.5-flash')
+model = genai.GenerativeModel('gemini-1.5-pro')
 
 st.title("نظام الإدارة الذكي")
 
