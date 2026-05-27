@@ -3,7 +3,8 @@ import google.generativeai as genai
 
 # إعداد المحرك بالمفتاح مباشرة
 genai.configure(api_key="AIzaSyBXCxlQC4B5qRlLsNgwKmj1lfbjEDnA1-4")
-model = genai.GenerativeModel('gemini-1.5-flash')
+model = genai.GenerativeModel('gemini-1.0-pro')
+
 
 st.title("نظام الإدارة الذكي")
 
